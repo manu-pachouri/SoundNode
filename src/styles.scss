@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+// background colors
+$header-color: #252525;
+$left-nav-bg-color: #414141;
+// text colors
+$text-white: white;
+
+//font classes
+.font-12px{font-size: 12px;}
+.font-13px{font-size: 13px;}
+.font-14px{font-size: 14px;}
+.font-15px{font-size: 15px;}
+.font-16px{font-size: 16px;}
+.font-17px{font-size: 17px;}
+
+
+// global styles
+body,html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-color{
+    background-color: $header-color;
+    color: $text-white;
+}
+
+.left-nav-bg-color{
+    background-color: $left-nav-bg-color;
+}
+
+.cur-pointer:hover{
+    cursor: pointer;
+}
+
+.top-header-search{
+    background-color: transparent;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    color: $text-white;
+}
+
+.search-icon{
+    background-image: url('./assets/images/search-bar-iocn.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 300px;
+    height: 25px;
+    border-radius: 5px;
+    padding-left: 30px;
+}
+
+// width: 60px; top: 0px; left: 0px; will-change: transform; position: absolute; transform: translate(-135px, 27px);
+
+.outline-none:focus{
+    outline: none !important;
+}
+

@@ -1,0 +1,35 @@
+ul img{
+    width: 40px;
+    height: 40px;
+}
+
+li{
+    padding: 8px;
+    border-bottom: 1px solid #616060;
+    &:not(:first-child):hover{
+        background-color: #838282;
+        transition: all 500ms ease-out;
+    }
+}
+
+animate-left-nav{
+    transition: all 200ms ease-out;
+}
+
+.menu-expanded{
+    @extend animate-left-nav;
+    max-width: 170px;
+}
+
+.menu-compressed{
+    @extend animate-left-nav;
+    max-width: 60px;
+    overflow: hidden;
+    & ul li:first-child img{
+        margin: auto;
+    }
+}
+
+.height-90{
+    height: 92.7%;
+}
