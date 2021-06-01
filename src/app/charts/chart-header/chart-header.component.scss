@@ -1,0 +1,30 @@
+.header-image{
+    background-image: url(./../../../assets/images/angel-1055391_960_720.jpg);
+    background-size: cover;
+    // background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 700px){
+    .header-image{
+        height: 400px;
+        // background-position-y: -140px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .header-image{
+        height: 250px;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .header-image{
+        background-position-y: 80%;
+    }
+}
+
+.chart-shadow{
+    letter-spacing: 3px;
+    text-shadow: 3px 2px 6px rgb(155, 154, 154);
+}

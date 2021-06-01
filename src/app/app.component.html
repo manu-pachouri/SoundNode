@@ -1,4 +1,11 @@
 <div class="container-fluid m-0 p-0 h-100">
-    <app-header></app-header>
-    <app-left-nav></app-left-nav>
+    <header>
+      <app-header></app-header>
+    </header>
+    <div class="d-flex h-100">
+      <app-left-nav></app-left-nav>
+      <div class="flex-grow-1 right-container-expanded">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
 </div>

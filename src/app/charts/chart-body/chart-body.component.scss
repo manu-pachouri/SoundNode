@@ -1,0 +1,8 @@
+$chart-body-color: #2c2c2c;
+
+.chart{
+    &-body{
+        padding-bottom: 50px;
+    }
+    background-image: linear-gradient(to bottom, #414141, transparent);
+}

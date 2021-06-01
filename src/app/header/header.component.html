@@ -1,6 +1,6 @@
-<div class="d-flex align-items-lg-end align-items-sm-center m-0 py-2 pr-2 main-color shadow">
-    <div class="col-2 pl-1">
-        <img src="../../assets/svgs/icons8-music.svg" style="max-width: 60px; max-height: 30px"
+<div class="d-flex align-items-lg-end align-items-sm-center m-0 pr-2 main-color shadow py-2 header">
+    <div class="col-2 d-flex pl-1 align-items-end">
+        <img src="../../assets/images/icons8-spotify-52.png" style="max-width: 60px;"
             class="cur-pointer col-2 pl-1" />
         <span class="font-larger font-weight-bold">SoundNode</span>
     </div>
@@ -12,9 +12,10 @@
         <img src="../../assets/svgs/icons8-settings.svg" style="max-width: 40px; max-height: 25px;" ngbDropdownToggle id="settings" class="cur-pointer">
         <ul ngbDropdownMenu aria-labelledby="settings" 
         class="main-color text-light img-thumbnail settings-click">
-            <li><a routerLink="" class="text-light text-decoration-none p-2">Profile</a></li>
-            <li><a routerLink="" class="text-light text-decoration-none p-2">Settings</a></li>
-            <li><a routerLink="" class="text-light text-decoration-none p-2">Logout</a></li>
+            <li class="py-1"><a routerLink="" class="text-light text-decoration-none p-3">Profile</a></li>
+            <li class="py-1"><a routerLink="" class="text-light text-decoration-none p-3">Settings</a></li>
+            <li class="py-1"><a routerLink="" class="text-light text-decoration-none p-3" (click)="Login()">Login</a></li>
+            <li class="py-1"><a routerLink="" class="text-light text-decoration-none p-3" (click)="Logout()">Logout</a></li>
         </ul>
     </div>
 </div>

@@ -1,0 +1,25 @@
+.song-card{
+    max-width: 180px;
+    max-height: 320px;
+    background-color: #444444;
+    &-image{
+        max-width: 180px;
+        max-height: 180px;
+    }
+    &:hover{
+        transition: all 500ms ease-out;
+        background-color: rgba(219, 219, 219, 0.39);
+        -webkit-box-shadow: 2px 3px 39px 8px rgba(0,0,0,0.55) !important; 
+        box-shadow: 2px 3px 39px 8px rgba(0,0,0,0.55) !important;
+        // animation-name: cardanimate;
+        // animation-duration: 1s;
+        // // background-image: linear-gradient(to top, black 30%, #dbdbdb8f);
+    }
+}
+
+@keyframes cardanimate {
+    0% { opacity: .7; }
+    25% { opacity: 0.8; }
+    50% { opacity: 0.9; }
+    100% { opacity: 1; }
+}

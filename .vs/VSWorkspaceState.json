@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\charts",
+    "\\src\\app\\charts\\chart-body",
+    "\\src\\app\\charts\\chart-header",
+    "\\src\\assets",
+    "\\src\\assets\\images"
+  ],
+  "SelectedNode": "\\src\\styles.scss",
+  "PreviewInSolutionExplorer": false
+}
