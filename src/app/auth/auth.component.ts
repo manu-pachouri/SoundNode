@@ -1,7 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginOptions, OAuthService } from 'angular-oauth2-oidc';
 import { environment } from 'src/environments/environment';
+import { map } from 'rxjs/operators'
+import { AuthorizationService } from '../services/authorization.service';
+import { TokenModel } from '../Models/models';
 
 @Component({
   selector: 'app-auth',
@@ -12,7 +16,9 @@ export class AuthComponent implements OnInit {
 
   constructor(private router : Router,
     private activeRoute : ActivatedRoute,
-    private http : HttpClient) { }
+    private http : HttpClient,
+    private authService : AuthorizationService,
+    private oauthService : OAuthService) { }
 
   ngOnInit(): void {
   }
@@ -29,11 +35,12 @@ export class AuthComponent implements OnInit {
         var body = `grant_type=authorization_code&code=${code}&redirect_uri=http://localhost:4200/auth`;
         this.http.post('https://accounts.spotify.com/api/token',body,{
           headers: headers
-        }).subscribe(data => {
-          console.log(data);
-          this.router.navigateByUrl('/charts');
+        })
+        .pipe(map((data : TokenModel) => data))
+        .subscribe(tokenModel => {
+          this.authService.tryLogin.next(tokenModel);
         });
       }
-    )
+    );
   }
 }

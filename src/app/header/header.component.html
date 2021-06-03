@@ -14,8 +14,8 @@
         class="main-color text-light img-thumbnail settings-click">
             <li class="py-1"><a routerLink="" class="text-light text-decoration-none p-3">Profile</a></li>
             <li class="py-1"><a routerLink="" class="text-light text-decoration-none p-3">Settings</a></li>
-            <li class="py-1"><a routerLink="" class="text-light text-decoration-none p-3" (click)="Login()">Login</a></li>
-            <li class="py-1"><a routerLink="" class="text-light text-decoration-none p-3" (click)="Logout()">Logout</a></li>
+            <li class="py-1"><a routerLink="" class="text-light text-decoration-none p-3" (click)="Login()" *ngIf="!isLoggedIn">Login</a></li>
+            <li class="py-1"><a routerLink="" class="text-light text-decoration-none p-3" (click)="Logout()" *ngIf="isLoggedIn">Logout</a></li>
         </ul>
     </div>
 </div>

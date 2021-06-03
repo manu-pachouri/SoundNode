@@ -20,5 +20,5 @@ export const authConfig : AuthConfig = {
     customQueryParams: {
         'show-dialog':'true'
     },
-    disablePKCE: true
+    disablePKCE: true,
 }
