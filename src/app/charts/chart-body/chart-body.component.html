@@ -1,8 +1,9 @@
 <div class="text-white pl-4 chart">
     <div class="display-3">
-        Hola!
+        ALBUMS
     </div>
     <div class="py-4 d-flex flex-wrap chart-body w-100">
-        <app-song-card *ngFor="let item of items" class="mb-4 mr-4"></app-song-card>
+        <album-card *ngFor="let album of albums" class="mb-4 mr-4"
+        [album]="album"></album-card>
     </div>
 </div>

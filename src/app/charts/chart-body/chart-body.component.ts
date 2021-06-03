@@ -1,4 +1,6 @@
+import { SpotifyApiService } from './../../services/spotify-api.service';
 import { Component, OnInit } from '@angular/core';
+import { AlbumModel, PagingModel } from 'src/app/Models/models';
 
 @Component({
   selector: 'app-chart-body',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chart-body.component.scss']
 })
 export class ChartBodyComponent implements OnInit {
-  items = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
-  constructor() { }
+  newReleases : PagingModel<AlbumModel>;
+  albums : Array<AlbumModel>;
+
+  constructor(private spotifyApiService : SpotifyApiService) { }
 
   ngOnInit(): void {
+    this.spotifyApiService.getNewReleases().subscribe(
+      data => {
+        this.newReleases = data.albums;
+        this.albums = data.albums.items;
+      }
+    );
   }
 
 }

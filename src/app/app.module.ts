@@ -1,3 +1,4 @@
+import { AuthInterceptor } from './auth/interceptors/http.interceptor';
 import { AuthorizationService } from './services/authorization.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { AuthComponent } from './auth/auth.component';
 
@@ -26,7 +27,12 @@ import { AuthComponent } from './auth/auth.component';
     OAuthModule.forRoot()
   ],
   providers: [
-    AuthorizationService
+    AuthorizationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent],
 })

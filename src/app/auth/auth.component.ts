@@ -23,7 +23,7 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getToken(){
+  LoginCodeFlow(){
     this.activeRoute.queryParams.subscribe(
       params => {
         var code = params['code'];

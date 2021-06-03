@@ -1,3 +1,4 @@
+import { PrivateUserModel } from './../Models/models';
 import { AuthorizationService } from './../services/authorization.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -10,17 +11,35 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   isLoggedIn : boolean;
+  userImageUrl: string;
+  userName: string;
+
   private subscriptions = new Subscription();
   constructor(private authService : AuthorizationService) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = this.authService.IsLoggedIn;
-    this.subscriptions.add(this.authService.loggedIn.subscribe(() => this.isLoggedIn = true));
-    this.subscriptions.add(this.authService.loggedOut.subscribe(() => this.isLoggedIn = false));
+    this.isLoggedIn = this.authService.isLoggedIn;
+    this.subscriptions.add(this.authService.loggedIn.subscribe((userInfo: PrivateUserModel) => {
+      this.isLoggedIn = true;
+      this.getUserData();
+    }));
+    this.subscriptions.add(this.authService.loggedOut.subscribe(() => {
+      this.isLoggedIn = false;
+    }));
+
+    this.getUserData();
+  }
+
+  getUserData(){
+    if(this.authService.isLoggedIn){
+      var userData = this.authService.getUserInfo;
+      this.userImageUrl = userData.images[0].url;
+      this.userName = userData.display_name;
+    }
   }
 
   Login(){
-    this.authService.LoginCodeFlow();
+    this.authService.loginCodeFlow();
   }
 
   Logout(){

@@ -1,0 +1,11 @@
+<div class="album-card p-3 rounded d-flex flex-column text-white cur-pointer shadow">
+    <div class="album-card-image d-flex justify-content-center album-card-image">
+        <img [src]="imageUrl" class="img-fluid flex-grow-1 rounded">
+    </div>
+    <div class="text-align-left">
+        <p class="mb-1 mt-2 p-0 text-wrap card-label-clamp">{{ album.name }}</p>
+        <div class="font-13px">
+            <p>Total Tracks: {{album.total_tracks}}</p>
+        </div>
+    </div>
+</div>
