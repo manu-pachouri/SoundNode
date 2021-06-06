@@ -1,0 +1,40 @@
+<div class="text-white pl-4 chart bg-main-body mb-4 pb-4">
+    <div class="display-4 pt-4 pb-2 w-100 border-bottom mr-3 pr-4 album-line">
+        {{album.name}}
+    </div>
+    <div class="d-flex flex-wrap m-0 pt-4">
+        <!-- container to blur images -->
+        <div class="">
+            <div class="">
+                <img class="img-fluid placeholder" [src]="albumImageUrl">
+                <div class="mt-4" style="max-width: 400px;">
+                    <p class="mb-1">Popularity: {{ album.popularity }}</p>
+                    <p class="font-12px label-clamp">Copyright: {{copyRightsText}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex-grow-1 pl-md-4 ml-lg-4">
+            <div class="">
+                <p class="font-22px">Tracks</p>
+                <div class="col-9" style="max-height: 400px; overflow-y: auto;">
+                    <app-tracks *ngFor="let track of tracks.items"
+                    [track]="track" class="border-bottom"
+                    (hasStartedPlaying)="passAlbumDetails()"></app-tracks>
+                </div>
+            </div>
+            <div class="mt-4">
+                <p class="font-20px">Artists</p>
+                <div class="d-flex flex-wrap">
+                    <div *ngFor="let artist of artists" class="mr-4 d-flex flex-column align-items-center"
+                    style="max-width: 200px;">
+                        <img src="{{artist.images[2].url}}" class="rounded-circle">
+                        <div class="d-flex text-center mt-2">
+                            <p class="mb-1">{{artist.name}}</p>
+                            <p class="mb-1"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

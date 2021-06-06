@@ -2,7 +2,7 @@ import { SpotifyApiService } from './spotify-api.service';
 import { PrivateUserModel, TokenModel } from './../Models/models';
 import { authConfig } from './../auth.config';
 import { Injectable, OnDestroy, OnInit } from '@angular/core';
-import { OAuthService } from 'angular-oauth2-oidc';
+import { JwksValidationHandler, OAuthService } from 'angular-oauth2-oidc';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -30,6 +30,7 @@ export class AuthorizationService implements OnInit {
   ) {
     //configure for code flow
     this.oauthClient.configure(authConfig);
+    this.oauthClient.setStorage(this.storage);
 
     //get token data from local storage
     this.getTokenDataFromStorage();
@@ -46,7 +47,7 @@ export class AuthorizationService implements OnInit {
   ngOnInit(): void {}
 
   loginCodeFlow() {
-    this.oauthClient.initImplicitFlow();
+    this.oauthClient.initCodeFlow();
   }
 
   private Login(data: TokenModel) {
@@ -56,7 +57,7 @@ export class AuthorizationService implements OnInit {
     this.createLogoutHandler();
     this.storeUserProfileData();
     console.log(`logged In! : ${new Date()}`);
-    this.router.navigateByUrl('/charts');
+    this.router.navigateByUrl('/charts/browse');
   }
 
   private Logout() {

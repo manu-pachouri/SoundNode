@@ -1,0 +1,23 @@
+$left-nav-color: #72147e;
+
+.tracks{
+    border-bottom: 1px solid #474747;
+    transition: all 300ms ease-in;
+    &:hover{
+        background-color: rgb(105, 105, 105);
+        .play-btn{
+            background-color: $left-nav-color;
+        }
+    }
+}
+
+.play-btn{
+    background-color: rgba(0, 0, 0, 0.342);
+    border-radius: 50%;
+    padding: 5px 4px 5px 6px;
+    width: 40px;
+    transition: all 300ms ease-out;
+    &:hover{
+        background-color: $left-nav-color;
+    }
+}

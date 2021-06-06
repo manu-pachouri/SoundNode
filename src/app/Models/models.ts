@@ -39,7 +39,7 @@ export class ArtistModel{
     followers : FollowersModel;
     genres : Array<string>;
     href : string;
-    id : number;//the spotify id for the artist
+    id : string;//the spotify id for the artist
     images : Array<ImageModel>;
     name: string;
     popularity: number;
@@ -61,11 +61,11 @@ export class AlbumModel{
     label: string;
     name: string;
     popularity: number;
-    releases_data: string;
+    releases_date: string;
     releases_date_precision: string;
     restrictions: AlbumRestrictionsModel;
     total_tracks: number;
-    tracks: Array<SimplifiedTrackModel>;
+    tracks: PagingModel<SimplifiedTrackModel>;
     type: Enums.ModelType;
     uri: string;
 }
@@ -155,4 +155,8 @@ export class PublicUserModel{
 //  PagingModels for all received models from api
 export class AlbumsPagingModel<T>{
     albums : PagingModel<T>;
+}
+
+export class TracksPagingModel{
+    tracks: PagingModel<SimplifiedTrackModel>;
 }

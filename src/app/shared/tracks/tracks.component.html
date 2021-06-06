@@ -1,0 +1,10 @@
+<div class="d-flex align-items-center border-bottom cur-pointer tracks p-1"
+(click)="playTrack()">
+    <img src="../../../assets/images/icons8-play-52.png" class="play-btn cur-pointer ml-4">
+    <div class="flex-grow-1 pl-4">
+        <p class="my-1">{{ track.name }}</p>
+        <div class="d-flex font-12px">
+            <p class="my-1">Duration: {{getTrackDuration()}}</p>
+        </div>
+    </div>
+</div>

@@ -1,9 +1,15 @@
 <div class="text-white pl-4 chart">
-    <div class="display-3">
+    <div class="display-4 pt-4 pb-2 w-100 border-bottom mr-3 pr-4 album-line">
         ALBUMS
     </div>
     <div class="py-4 d-flex flex-wrap chart-body w-100">
         <album-card *ngFor="let album of albums" class="mb-4 mr-4"
-        [album]="album"></album-card>
+        [album]="album" (click)="previewAlbum(album.id)"></album-card>
+    </div>
+    <div class="mt-4 w-100 text-center mb-4">
+        <button class="m-auto cur-pointer load-more-btn" (click)="loadMore()">
+            <img src="../../../assets/images/icons8-chevron-down-64.png" style="width: 30px;" class="mr-3">
+            <span>LOAD MORE</span>
+        </button>
     </div>
 </div>

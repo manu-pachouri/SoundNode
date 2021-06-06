@@ -11,6 +11,7 @@ import { LeftNavComponent } from './left-nav/left-nav.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { AuthComponent } from './auth/auth.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AuthComponent } from './auth/auth.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    OAuthModule.forRoot()
+    OAuthModule.forRoot(),
+    SharedModule
   ],
   providers: [
     AuthorizationService,

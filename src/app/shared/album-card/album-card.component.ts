@@ -15,5 +15,4 @@ export class AlbumCardComponent implements OnInit {
   ngOnInit(): void {
     this.imageUrl = this.album.images[1].url;
   }
-
 }

@@ -1,4 +1,3 @@
-import { HttpParams } from '@angular/common/http';
 import { AuthConfig } from "angular-oauth2-oidc";
 import { environment } from "src/environments/environment";
 
@@ -13,14 +12,9 @@ export const authConfig : AuthConfig = {
     clientId : environment.clientID,
     redirectUri : redirectUri+'auth',
     postLogoutRedirectUri: redirectUri,
-    tokenEndpoint : 'https://accounts.spotify.com/api/token',
-    strictDiscoveryDocumentValidation : false,
     scope: scopes,
     showDebugInformation: true,
     requestAccessToken: true,
-    clearHashAfterLogin: true,
-    customQueryParams: {
-        'show-dialog':'true'
-    },
     disablePKCE: true,
+    tokenEndpoint: 'https://accounts.spotify.com/api/token'
 }

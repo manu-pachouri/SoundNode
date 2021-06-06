@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginOptions, OAuthService } from 'angular-oauth2-oidc';
 import { environment } from 'src/environments/environment';
@@ -12,13 +12,12 @@ import { TokenModel } from '../Models/models';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent implements OnInit, OnDestroy {
 
   constructor(private router : Router,
     private activeRoute : ActivatedRoute,
     private http : HttpClient,
-    private authService : AuthorizationService,
-    private oauthService : OAuthService) { }
+    private authService : AuthorizationService) { }
 
   ngOnInit(): void {
   }
@@ -42,5 +41,8 @@ export class AuthComponent implements OnInit {
         });
       }
     );
+  }
+  
+  ngOnDestroy(): void {
   }
 }

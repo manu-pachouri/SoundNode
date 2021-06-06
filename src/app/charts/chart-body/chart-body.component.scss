@@ -1,8 +1,24 @@
-$chart-body-color: #2c2c2c;
+$chart-body-color: #414141;
+
+.album-line{
+    text-shadow: 4px 3px 7px #20202080;
+    letter-spacing: 2px;
+}
 
 .chart{
     &-body{
         padding-bottom: 50px;
     }
     background-image: linear-gradient(to bottom, #414141, transparent);
+}
+
+.load-more-btn{
+    background-color: transparent;
+    outline: none;
+    color: white;
+    border: none;
+    &:hover{
+        border-bottom: 1px solid #636363;
+        background-image: linear-gradient(to bottom, #16161673, transparent);
+    }
 }
