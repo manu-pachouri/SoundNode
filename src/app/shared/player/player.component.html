@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center w-100 fixed-bottom text-white pl-2 pr-4" style="height: 55px;
+background-color: black;">
+    <div class="">
+        <img src="../../../assets/images/player/icons8-play-64.png" class="player-icons cur-pointer" *ngIf="!isPlaying"
+            (click)="playPause()">
+        <img src="../../../assets/images/player/icons8-pause-64.png" class="player-icons cur-pointer" *ngIf="isPlaying"
+            (click)="playPause()">
+    </div>
+    <div class="mx-3">
+        <img [src]="trackImage" *ngIf="trackImage != null" class="player-icons">
+        <div>
+            <p>{{ trackPlaying.name }}</p>
+        </div>
+    </div>
+</div>
