@@ -26,7 +26,7 @@ import { SharedModule } from './shared/shared.module';
     NgbModule,
     HttpClientModule,
     OAuthModule.forRoot(),
-    SharedModule
+    SharedModule,
   ],
   providers: [
     AuthorizationService,

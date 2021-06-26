@@ -1,6 +1,7 @@
 import { AudioService } from './../../services/audio.service';
 import { SimplifiedTrackModel } from './../../Models/models';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import * as playerFunc from '../player/player-functions';
 
 @Component({
   selector: 'app-tracks',
@@ -19,9 +20,7 @@ export class TracksComponent implements OnInit {
   }
 
   getTrackDuration(){
-    var seconds = (this.track.duration_ms / (1000 * 60)).toFixed(2);
-    var duration_s = seconds.split('.').join(':');
-    return duration_s;
+    return playerFunc.displayTrackTime(this.track.duration_ms);  
   }
 
   playTrack(){

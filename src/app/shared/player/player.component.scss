@@ -1,5 +1,42 @@
+$green-yellow: greenyellow;
+$mat-purple: rgb(234, 4, 255);
+
 .player-icons{
     display: block;
     width: 45px;
     height: 45px;
+}
+
+.inverted{
+    transform: rotateZ(180deg);
+}
+
+.player{
+    &-compressed{
+        height: 55px;
+        transition: height 300ms ease-out;
+    }
+    &-expanded{
+        height: calc(100% - 50px);
+        transition: height 300ms ease-out;
+    }
+}
+
+.audio-progress-bar{
+    width: 400px;
+    background-color: $mat-purple;
+    height: 3px;
+}
+
+.volume{
+    &-container{
+        position: relative;
+    }
+    width: 30px;
+    height: 30px;
+    transition: all 300ms ease;
+    &-adjust{
+        width: 100px;
+        height: 3px;
+    } 
 }
