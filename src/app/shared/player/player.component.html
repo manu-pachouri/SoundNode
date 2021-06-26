@@ -13,9 +13,9 @@
         </div>
         <div class="d-flex align-items-center">
             <div class="" [class.ml-4]="isExpanded">
-                <img src="../../../assets/images/player/icons8-play-64.png" class="player-icons cur-pointer"
+                <img src="assets/images/player/icons8-play-64.png" class="player-icons cur-pointer"
                     *ngIf="!isPlaying" (click)="playPause()">
-                <img src="../../../assets/images/player/icons8-pause-64.png" class="player-icons cur-pointer"
+                <img src="assets/images/player/icons8-pause-64.png" class="player-icons cur-pointer"
                     *ngIf="isPlaying" (click)="playPause()">
             </div>
             <div class="mx-3 d-flex align-items-center flex-grow-1">
@@ -29,13 +29,13 @@
                 </div>
             </div>
             <div class="d-flex align-items-center cur-pointer mr-2 ml-3 volume-container">
-                <img src="../../../assets/images/icons8-speaker-30.png" class="mr-1 img-fluid m-0 p-0 player-icons volume">
+                <img src="assets/images/icons8-speaker-30.png" class="mr-1 img-fluid m-0 p-0 player-icons volume">
                 <input type="range" class="cur-pointer volume-adjust m-0 p-0" max="100" min="0"
                 (input)="changeVolume()"> 
             </div>
         </div>
     </div>
     <div class="ml-auto align-self-start">
-        <div><img src=".././../../assets/images/icons8-chevron-down-48.png" class="img-fluid cur-pointer" style="height: 40px; width: 40px;" [class.inverted]="!isExpanded" (click)="toggleExpand()"></div>
+        <div><img src="assets/images/icons8-chevron-down-48.png" class="img-fluid cur-pointer" style="height: 40px; width: 40px;" [class.inverted]="!isExpanded" (click)="toggleExpand()"></div>
     </div>
 </div>

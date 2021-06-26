@@ -35,7 +35,7 @@ $text-white: white;
 .font-30px{font-size: 30px;}
 @font-face {
     font-family: appFont;
-    src: url(./assets/fonts/GothamMediumRegular.ttf);
+    src: url(assets/fonts/GothamMediumRegular.ttf);
 }
 
 // global styles
@@ -80,7 +80,7 @@ body{
 }
 
 .search-icon{
-    background-image: url('./assets/images/icons8-search-50.png');
+    background-image: url('assets/images/icons8-search-50.png');
     background-size: contain;
     background-repeat: no-repeat;
     min-width: 300px;
