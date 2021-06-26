@@ -58,6 +58,12 @@ body{
     width: 100%;
 }
 
+.header-image{
+    background-image: url('assets/images/angel-1055391_960_720.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .main-color{
     background-color: $header-color;
     color: $text-white;

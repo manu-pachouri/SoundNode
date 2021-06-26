@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LoginOptions, OAuthService } from 'angular-oauth2-oidc';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators'
 import { AuthorizationService } from '../services/authorization.service';
@@ -31,7 +30,7 @@ export class AuthComponent implements OnInit, OnDestroy {
         .set('Authorization', 'Basic '+ encodeData)
         .set('Content-Type', 'application/x-www-form-urlencoded');
 
-        var body = `grant_type=authorization_code&code=${code}&redirect_uri=http://localhost:4200/auth`;
+        var body = `grant_type=authorization_code&code=${code}&redirect_uri=${environment.redirectUri}/auth`;
         this.http.post('https://accounts.spotify.com/api/token',body,{
           headers: headers
         })
