@@ -14,8 +14,8 @@ export class AudioService {
   private albumPlaying: AlbumModel;
   private totalPlayTime = 30000;
   private elapsedTime_ms : number;
-  private timer1: NodeJS.Timeout;
-  private timer2: NodeJS.Timeout;
+  private timer1: any;
+  private timer2: any;
 
   startTrack = new Subject<SimplifiedTrackModel>();
   startedPlaying = new Subject<SimplifiedTrackModel>();
