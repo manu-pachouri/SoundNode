@@ -7,6 +7,7 @@
 $header-color: #000000;
 $left-nav-bg-color: #1a1919;
 $chart-body-color: #414141;
+$chart-left-nav-color: #72147e;
 
 .bg-main-body{
     background-image: linear-gradient(to bottom, #414141, transparent);
@@ -42,6 +43,7 @@ $text-white: white;
 body,html{
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body{
@@ -49,6 +51,10 @@ body{
     padding-top: 57px;
     padding-bottom: 57px;
     background-color: black;
+}
+
+button{
+    outline: none;
 }
 
 .header{
@@ -126,3 +132,27 @@ body{
     display: block;
     text-overflow: ellipsis;
 }
+
+//scrollbar styles
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $chart-left-nav-color; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background: #47134e; 
+  }

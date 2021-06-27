@@ -4,10 +4,12 @@
 
 export const environment = {
   production: false,
+  overridden: true,
   uri: 'http://localhost:4200',
   redirectUri: 'http://localhost:4200',
   clientID : '46d81b48ff5d43519157bfd92e6d555b',
-  clientSecret : 'c5015d5b63414920b29e0b463f0d2432'
+  clientSecret : 'c5015d5b63414920b29e0b463f0d2432',
+  message: 'local testing'
 };
 
 /*

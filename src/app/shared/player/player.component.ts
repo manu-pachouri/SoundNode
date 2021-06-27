@@ -1,4 +1,5 @@
-import { AlbumModel, SimplifiedTrackModel } from './../../Models/models';
+import { AuthorizationService } from './../../services/authorization.service';
+import { AlbumModel, PagingModel, SimplifiedTrackModel } from './../../Models/models';
 import { AudioService } from './../../services/audio.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -24,7 +25,8 @@ export class PlayerComponent implements OnInit, OnDestroy {
   volumeRange: any;
   songSeeker: any;
 
-  constructor(private audioService : AudioService) { }
+  constructor(private audioService : AudioService,
+              private authService: AuthorizationService) { }
 
   ngOnInit(): void {
     this.registerSubs();
@@ -63,6 +65,12 @@ export class PlayerComponent implements OnInit, OnDestroy {
       this.isPlaying = this.audioService.isPlaying;
       this.startTimer();
     }));
+
+    this.subscription.add(
+      this.authService.loggedOut.asObservable().subscribe(()=>{
+        this.resetPlayer();
+      })
+    );
   }
 
   playPause(){
@@ -115,5 +123,15 @@ export class PlayerComponent implements OnInit, OnDestroy {
   seekTrack(){
     this.elapsedTime_ms = 300 * this.songSeeker.value;
     this.audioService.seekTrackTime = playerFuncs.fetchTrackTimeins(300*(this.songSeeker.value));
+  }
+
+  resetPlayer(){
+    this.audioService.stopPlaying.next();
+      this.trackPlaying = new SimplifiedTrackModel();
+      this.relatedAlbum = new AlbumModel();
+      this.trackImageSmall = null;
+      this.trackImageLarge = null;
+      this.totalTrackTime_ms = 0;
+      this.songSeeker.value = 0;
   }
 }

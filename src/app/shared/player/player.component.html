@@ -7,7 +7,10 @@
 
     <div class="d-flex flex-column flex-grow-1 h-100"
     [ngStyle]="{'padding': isExpanded ? '2rem 0px 2rem 0px' : '0px'}">
-        <div *ngIf="isExpanded" class="mb-4 flex-grow-1" style="overflow-y: auto;">
+        <div class="display-4 m-auto" *ngIf="relatedAlbum.tracks == null && isExpanded">
+            No Tracks playing
+        </div>
+        <div *ngIf="isExpanded && relatedAlbum.tracks" class="mb-4 flex-grow-1" style="overflow-y: auto;">
             <app-tracks *ngFor="let track of relatedAlbum.tracks.items" [track]="track" class="border-bottom">
             </app-tracks>
         </div>

@@ -67,7 +67,7 @@ export class AuthorizationService implements OnInit {
     window.clearTimeout(this.logOutTimer);
     this.loggedOut.next();
     console.log(`Logged Out! ${new Date()}`);
-    this.router.navigateByUrl('/charts');
+    this.router.navigate(['auth']);
   }
 
   private createLogoutHandler() {

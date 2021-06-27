@@ -1,3 +1,4 @@
+import { AuthGuard } from './../auth/guard/auth.guard';
 import { AlbumViewComponent } from './album-view/album-view.component';
 import { ChartBodyComponent } from './chart-body/chart-body.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ const routes: Routes = [
   {
     path:'browse',
     component: ChartsComponent,
+    canActivate: [AuthGuard],
     children:[
       {
         path:'',
